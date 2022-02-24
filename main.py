@@ -8,7 +8,7 @@ gsheet = GoogleSheet()
 
 page = 0
 
-# Обращение странице и поиск общего кол-ва объявлений деленное на колличество объявлений дает общее количество страниц
+# Поиск общего кол-ва объявлений и деленние на кол-во объявлений на странице  дает общее количество страниц
 response = requests.get('https://kolesa.kz/cars/?page=' + str(page))
 html = BeautifulSoup(response.content, 'html.parser')
 pages = str(html.find_all('div', class_='finded'))
