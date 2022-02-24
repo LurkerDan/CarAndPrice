@@ -26,7 +26,7 @@ while page != 1:
     response = requests.get('https://kolesa.kz/cars/?page=' + str(page))
     html = BeautifulSoup(response.content, 'html.parser')
 
-    # Поиск Raw цен и машин на странице
+    # Поиск Raw цен и машин на страницы
     prices = html.find_all('span', class_='price')
     cars = html.select('div > div.a-info-top')
 
